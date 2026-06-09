@@ -4,9 +4,9 @@ name: Pipeline CI/CD - Master Inventory Equipo 8
 # Se activa con cada push o pull request a la rama master
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 # ─── Jobs ─────────────────────────────────────────────────────────────────────
 jobs:
