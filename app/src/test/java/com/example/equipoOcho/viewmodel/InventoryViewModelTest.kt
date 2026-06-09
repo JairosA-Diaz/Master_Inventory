@@ -1,6 +1,5 @@
 package com.example.equipoOcho.viewmodel
 
-import android.app.Application
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.equipoOcho.model.Inventory
 import com.example.equipoOcho.model.ProductModelResponse
@@ -27,9 +26,6 @@ class InventoryViewModelTest {
     val mainDispatcherRule = MainDispatcherRule()
 
     @Mock
-    lateinit var application: Application
-
-    @Mock
     lateinit var repository: InventoryRepository
 
     private lateinit var viewModel: InventoryViewModel
@@ -37,7 +33,7 @@ class InventoryViewModelTest {
     @Before
     fun setUp() {
         // ViewModel with mocked repository
-        viewModel = InventoryViewModel(application, repository)
+        viewModel = InventoryViewModel(repository)
         println(">>> setUp: InventoryViewModel created with mocked repository")
     }
 
@@ -67,7 +63,7 @@ class InventoryViewModelTest {
         val inventory = Inventory(
             id = 1,
             name = "Zapatos deportivos",
-            price = 120000,   // adjust to your model type (Int)
+            price = 120000,
             quantity = 3
         )
 
@@ -184,7 +180,6 @@ class InventoryViewModelTest {
 
     @Test
     fun `getProducts actualiza listProducts desde el repo`() = runTest {
-        // OPTION 1 (safe for compile): keep using mocks for ProductModelResponse
         val product = mock(ProductModelResponse::class.java)
         val listProducts = mutableListOf(product)
 
