@@ -19,6 +19,12 @@ class InventoryViewModel @Inject constructor(
     private val _listInventory = MutableLiveData<MutableList<Inventory>>()
     val listInventory: LiveData<MutableList<Inventory>> get() = _listInventory
 
+    private val _totalItems = MutableLiveData(0)
+    val totalItems: LiveData<Int> get() = _totalItems
+
+    private val _totalValue = MutableLiveData(0.0)
+    val totalValue: LiveData<Double> get() = _totalValue
+
     private val _progresState = MutableLiveData(false)
     val progresState: LiveData<Boolean> = _progresState
 
@@ -40,11 +46,24 @@ class InventoryViewModel @Inject constructor(
         viewModelScope.launch {
             _progresState.value = true
             try {
-                _listInventory.value = inventoryRepository.getListInventory()
+                val list = inventoryRepository.getListInventory()
+                _listInventory.value = list
+                calculateTotals(list)
             } finally {
                 _progresState.value = false
             }
         }
+    }
+
+    private fun calculateTotals(list: List<Inventory>) {
+        var items = 0
+        var value = 0.0
+        for (item in list) {
+            items += item.quantity
+            value += (item.price * item.quantity)
+        }
+        _totalItems.value = items
+        _totalValue.value = value
     }
 
     fun deleteInventory(inventory: Inventory) {

@@ -83,6 +83,7 @@ class HomeInventoryFragment : Fragment() {
 
     private fun observadorViewModel() {
         observerListInventory()
+        observerTotals()
         observerProgress()
     }
 
@@ -93,7 +94,16 @@ class HomeInventoryFragment : Fragment() {
             recycler.layoutManager = LinearLayoutManager(context)
             val adapter = InventoryAdapter(listInventory, findNavController())
             recycler.adapter = adapter
-            adapter.notifyDataSetChanged()
+            // No es necesario llamar a notifyDataSetChanged() al asignar un nuevo adapter
+        }
+    }
+
+    private fun observerTotals() {
+        inventoryViewModel.totalItems.observe(viewLifecycleOwner) { total ->
+            binding.tvTotalItems.text = total.toString()
+        }
+        inventoryViewModel.totalValue.observe(viewLifecycleOwner) { total ->
+            binding.tvTotalValue.text = "$ $total"
         }
     }
 
