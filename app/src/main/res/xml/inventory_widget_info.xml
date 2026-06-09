@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="250dp"
+    android:minHeight="120dp"
+    android:updatePeriodMillis="0"
+    android:resizeMode="horizontal|vertical"
+    android:initialLayout="@layout/widget_inventory"
+    android:widgetCategory="home_screen"
+    android:minResizeWidth="260dp"
+    android:minResizeHeight="80dp" />

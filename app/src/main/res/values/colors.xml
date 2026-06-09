@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="backgroundColor">#A7AED4</color>
+    <color name="backgroundColorItem">#e7e0eb</color>
+    <color name="backgroudColorBtn">#009688</color>
+    <color name="inventory_orange">#e7522e</color>
+    <color name="inventory_icon_orange">#FA8523</color>
+    <color name="login_background_dark">#212121</color>
+    <color name="inventory_login_orange">#FF6F00</color>
+
+
+
+</resources>

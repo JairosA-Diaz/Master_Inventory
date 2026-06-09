@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".InventoryApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_inventory_widget"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_inventory_widget"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.equipoOcho"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <!-- Activity principal con NavHost; si NO quieres que se abra desde el icono,
+             puedes quitar este intent-filter MAIN/LAUNCHER -->
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <!-- Provider del AppWidget -->
+        <receiver
+            android:name=".view.widget.InventoryWidgetProvider"
+            android:exported="false">
+
+            <intent-filter>
+                <!-- Actualización normal del widget -->
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <!-- Acción personalizada para el ojo -->
+                <action android:name="com.example.equipoOcho.action.TOGGLE_VISIBILITY" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/inventory_widget_info" />
+        </receiver>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">equipoOcho</string>
+    <string name="tituloInventario">Inventario</string>
+    <string name="desc_inventory_image">Imagen de inventario</string>
+    <string name="desc_fingerprint_animation">Animación de huella digital</string>
+
+
+
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "932191216324",
+    "project_id": "inventoryequipoocho",
+    "storage_bucket": "inventoryequipoocho.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932191216324:android:fc9fe8ffbb57851e43df91",
+        "android_client_info": {
+          "package_name": "com.example.equipoOcho"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "932191216324-pblsakanp29166if4pqc5md0eo1fgkr2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAt1VsUzUmpmeVdf0eQRNvTubHh_srocXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "932191216324-pblsakanp29166if4pqc5md0eo1fgkr2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

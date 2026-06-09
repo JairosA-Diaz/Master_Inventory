@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="5dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvInventory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:foreground="?selectableItemBackground"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <!-- Nombre del producto (parte superior izquierda) -->
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre producto"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:textSize="16sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/tvPrice" />
+
+                <!-- Precio unitario (derecha, centrado vertical, naranja) -->
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ 0,00"
+                    android:padding="5dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/inventory_orange"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <!-- Etiqueta "Id:" (parte inferior izquierda, solo lectura) -->
+                <TextView
+                    android:id="@+id/tvProductIdLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Id:"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:textSize="14sp"
+                    android:textColor="#808080"
+                    app:layout_constraintTop_toBottomOf="@id/tvName"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <!-- Id (valor solo lectura) -->
+                <TextView
+                    android:id="@+id/tvProductId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12"
+                    android:padding="5dp"
+                    android:textSize="14sp"
+                    android:textColor="#808080"
+                    app:layout_constraintTop_toTopOf="@id/tvProductIdLabel"
+                    app:layout_constraintBottom_toBottomOf="@id/tvProductIdLabel"
+                    app:layout_constraintStart_toEndOf="@id/tvProductIdLabel" />
+
+                <!-- Etiqueta "Cant:" (inferior derecha, solo lectura) -->
+                <TextView
+                    android:id="@+id/tvQuantityLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cant:"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:textSize="14sp"
+                    android:textColor="#808080"
+                    app:layout_constraintTop_toBottomOf="@id/tvName"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/tvQuantity" />
+
+                <!-- Cantidad (valor solo lectura) -->
+                <TextView
+                    android:id="@+id/tvQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:padding="5dp"
+                    android:textSize="14sp"
+                    android:textColor="#808080"
+                    app:layout_constraintTop_toTopOf="@id/tvQuantityLabel"
+                    app:layout_constraintBottom_toBottomOf="@id/tvQuantityLabel"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
