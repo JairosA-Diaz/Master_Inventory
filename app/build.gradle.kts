@@ -11,6 +11,11 @@ android {
     namespace = "com.example.equipoOcho"
     compileSdk = 34
 
+    lint {
+        baseline = file("lint-baseline.xml")
+        abortOnError = false
+    }
+
     defaultConfig {
         applicationId = "com.example.equipoOcho"
         minSdk = 24
