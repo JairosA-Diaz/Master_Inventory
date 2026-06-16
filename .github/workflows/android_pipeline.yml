@@ -23,7 +23,7 @@ jobs:
       # ── Etapa 1: Obtener código fuente ──────────────────────────────────────
       - name: "Etapa 1 - Obtener código fuente"
         uses: actions/checkout@v4
-
+      # comentario prubea
       # ── Etapa 2: Configurar entorno ─────────────────────────────────────────
       - name: "Etapa 2 - Instalar JDK 17"
         uses: actions/setup-java@v4
